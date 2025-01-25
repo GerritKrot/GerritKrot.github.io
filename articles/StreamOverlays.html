@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gerrit Krot - Prism Simulation">
+    <meta name="description" content="Gerrit Krot - Stream Overlays">
     <meta name="author" content="Gerrit Krot">
-    <title>Gerrit Krot- Prism Simulation</title>
+    <title>Gerrit Krot- Stream Overlays</title>
     <!-- font icons -->
     <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Steller main styles -->
@@ -34,8 +34,8 @@
 
    <section id = MainArticle class="section">
         <div class="container text-center">
-            <h4 class="title">Prism Simulation</h4>
-            <h6 class="subtitle">Simulates how light refracts through prisms - only using backwards raytracing.</h6>
+            <h4 class="title">Stream Overlays</h4>
+            <h6 class="subtitle">Twtich Stream overlays for charitable events and other personal streams.</h6>
         </div>
         <!-- CENTER THIS IMAGE-->
         <div class="container img-wrapper">
@@ -44,13 +44,11 @@
         <div class="container">
             <div class="row text-center text-md-left">
                 <div  class="col-md-9">
-                    <p> This project attempted to create an efficient method of generating rainbows projected through
-                        a prism without using photon mapping. Written from scratch in C# with no graphics libraries,
-                        I learned a lot about ray tracing processes during development. The basic ray tracer creates
-                        multiple rays per pixel that transmit through and reflect off of geometry in the scene. 
-                        It can load in geometry from files, and uses a simple KD Tree implementation for optimization 
-                        purposes.The main challenges of this project were representing the full spectrum of light 
-                        and calculating the diffraction of light through the prism.</p>
+                    <p>For the past few years, I have been involved with a Charity Livestream on Twitchcalled “Dawn of a New Day” 
+                        that raised over $8,000 for various charities, including Save the Children and the Stonewall 
+                        Community Foundation. For each of the streams, I program an overlay UI that plays custom animations 
+                        and holds all sorts of data from the stream. These usually interface with Stream Labels and Google App
+                         Sheets API to access the most up-to-date data. The apps have been made in Godot and Unity.</p>
 
                     <p> Instead of a basic RGB color value, each ray has a component for each wavelength of light.
                         Each wavelength was associated with an RGB value according to the Mihai-Strajescu approximation. 

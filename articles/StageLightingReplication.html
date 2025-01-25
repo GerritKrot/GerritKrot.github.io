@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gerrit Krot - Prism Simulation">
+    <meta name="description" content="Gerrit Krot - Stage Lighting Replication">
     <meta name="author" content="Gerrit Krot">
-    <title>Gerrit Krot- Prism Simulation</title>
+    <title>Gerrit Krot- Stage Lighting Replication</title>
     <!-- font icons -->
     <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Steller main styles -->
@@ -34,45 +34,38 @@
 
    <section id = MainArticle class="section">
         <div class="container text-center">
-            <h4 class="title">Prism Simulation</h4>
-            <h6 class="subtitle">Simulates how light refracts through prisms - only using backwards raytracing.</h6>
+            <h4 class="title">Stage Lighting Replication</h4>
+            <h6 class="subtitle">An Unreal Engine Plugin that replicates the lighting conditions of an image.</h6>
         </div>
         <!-- CENTER THIS IMAGE-->
         <div class="container img-wrapper">
-            <img src="../assets/imgs/Articles/RaytracingPageTop.jpg" alt="">
+            <img src="../assets/imgs/Articles/LightingReplicationPageTop.png" alt="">
         </div>
         <div class="container">
             <div class="row text-center text-md-left">
-                <div  class="col-md-9">
-                    <p> This project attempted to create an efficient method of generating rainbows projected through
-                        a prism without using photon mapping. Written from scratch in C# with no graphics libraries,
-                        I learned a lot about ray tracing processes during development. The basic ray tracer creates
-                        multiple rays per pixel that transmit through and reflect off of geometry in the scene. 
-                        It can load in geometry from files, and uses a simple KD Tree implementation for optimization 
-                        purposes.The main challenges of this project were representing the full spectrum of light 
-                        and calculating the diffraction of light through the prism.</p>
+                <div  class="col-md-7">
+                    <p> For my master’s project, I attempted to create an Unreal Engine 5 C++ plugin that would allow
+                         developers to recreate stage lighting for digital applications. This was primarily aimed at 
+                         AR-enhanced stage plays, like <a href="./ARStageplay.html">"Singring and the Glass Guitar,"</a> which I helped develop in 2023.</a>
+                         For additional reading, please check out <a href= "./GKrotMastersReport.pdf">my paper on this project.</a></p>
 
-                    <p> Instead of a basic RGB color value, each ray has a component for each wavelength of light.
-                        Each wavelength was associated with an RGB value according to the Mihai-Strajescu approximation. 
-                        When rays encounter a refractive surface each wavelength splits off and is traced separately. 
-                        This diffraction creates the rainbow effect on the spheres as observed in the image to the right.</p>
+                    <p> The first part of this project was creating a system that generates an approximate 
+                        mapping of the light present in images of the stage. This system required two images 
+                        captured from the same position and angle: one fully illuminated, and one of the target 
+                        illumination. Assuming that the fully illuminated stage was lit uniformly, the difference in 
+                        color levels between each pixel represents the amount of light present in each pixel. By  
+                        projecting the image onto the geometry, each pixel can be mapped to a location on the stage.</p>
                 </div>
-                <div class = "col-md-3">
-                    <img src="../assets/imgs/Articles/RaytracingSpheres.jpg" alt="" class = "img-thumbnail">
+                <div class = "col-md-5">
+                    <img src="../assets/imgs/Articles/LightingReplicationComparison.png" alt="" class = "img-thumbnail" >
                 </div>
             </div>
-            <p> To generate a projected rainbow effect, a rectangular light source with uniform direction 
-                was placed in the scene. When this light hits the prism, it diffracts into several different 
-                colors, specified by a run-time parameter. Based on the refractive index of the prism, a new 
-                light source volume is generated for each wavelength of light. When a ray intersects a surface
-                in one or more of these volumes, the ray receives additional lighting of that wavelength.</p>
-
-            <p> The success of this method proved limited. The generated volumes were reasonably accurate in 
-                this test case, but were inaccurate in scenarios where they intersected more than a single side of
-                the prism. Additionally, these volumes did not interact favorably with KD trees, unlike photon 
-                mapped solutions. Another problem is that the time required to render a scene scales directly with
-                the number of wavelengths approximated. Despite these limitations, this project was academically
-                interesting and dramatically expanded my understanding of raytracing </p>
+            <p> This mapping acts as a “ground truth” for a genetic algorithm. This algorithm optimizes the angles, 
+                colors, and sizes of spotlights in the scene. Each proposed solution assigns each of these 
+                variables to have the levels of light at each point in the mapping be as close to the ground
+                truth as possible. Overall, the success of this project was limited - the algorithm produced results that had correct ambient levels
+                and spotlight colors, but overfocused on the brightest parts of illuminated regions. Additionally, 
+                this method required a significant amount of time, and was far too slow to be of practical use.</p>
         </div>
    </section>
 

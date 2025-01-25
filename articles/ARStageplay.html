@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Gerrit Krot - Prism Simulation">
+    <meta name="description" content="Gerrit Krot - AR Stageplay">
     <meta name="author" content="Gerrit Krot">
-    <title>Gerrit Krot- Prism Simulation</title>
+    <title>Gerrit Krot- AR Stageplay</title>
     <!-- font icons -->
     <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Steller main styles -->
@@ -34,45 +34,37 @@
 
    <section id = MainArticle class="section">
         <div class="container text-center">
-            <h4 class="title">Prism Simulation</h4>
-            <h6 class="subtitle">Simulates how light refracts through prisms - only using backwards raytracing.</h6>
+            <h4 class="title">AR Stageplay</h4>
+            <h6 class="subtitle">A dance performance enhanced by digital effects rendered in Augmented Reality.</h6>
         </div>
         <!-- CENTER THIS IMAGE-->
         <div class="container img-wrapper">
-            <img src="../assets/imgs/Articles/RaytracingPageTop.jpg" alt="">
+            <img src="../assets/imgs/Articles/ARStageplayPageTop.PNG" alt="">
         </div>
         <div class="container">
-            <div class="row text-center text-md-left">
-                <div  class="col-md-9">
-                    <p> This project attempted to create an efficient method of generating rainbows projected through
-                        a prism without using photon mapping. Written from scratch in C# with no graphics libraries,
-                        I learned a lot about ray tracing processes during development. The basic ray tracer creates
-                        multiple rays per pixel that transmit through and reflect off of geometry in the scene. 
-                        It can load in geometry from files, and uses a simple KD Tree implementation for optimization 
-                        purposes.The main challenges of this project were representing the full spectrum of light 
-                        and calculating the diffraction of light through the prism.</p>
+            <div class="text-center text-md-left">
+                    <p> In 2024, RIT hosted an AR-enhanced play of 
+                        <a href="https://vimeo.com/823828141/68484893f3">Todd Rundgren’s “Singring and the Glass Guitar”</a>.
+                        I was a part of the team that developed the effects and synchronized them to the performance. 
+                        This project was created in Unreal Engine 4 for the Magic Leap, and required working closely 
+                        with a team of graphic designers and choreographers. </p>
 
-                    <p> Instead of a basic RGB color value, each ray has a component for each wavelength of light.
-                        Each wavelength was associated with an RGB value according to the Mihai-Strajescu approximation. 
-                        When rays encounter a refractive surface each wavelength splits off and is traced separately. 
-                        This diffraction creates the rainbow effect on the spheres as observed in the image to the right.</p>
-                </div>
-                <div class = "col-md-3">
-                    <img src="../assets/imgs/Articles/RaytracingSpheres.jpg" alt="" class = "img-thumbnail">
-                </div>
+                    <p> The primary challenge of AR-enhanced plays is ensuring that the effects appear in the correct locations.
+                        More advanced AR headsets are able to map their environment, but the Magic Leap lacked this functionality.
+                        Instead, we used a QR code on the stage and calculated its size and orientation from visual input. 
+                        This allowed us to determine the location and orientation of each user relative to the stage, and 
+                        display all of the animations and effects in a location correct for them.</p>
             </div>
-            <p> To generate a projected rainbow effect, a rectangular light source with uniform direction 
-                was placed in the scene. When this light hits the prism, it diffracts into several different 
-                colors, specified by a run-time parameter. Based on the refractive index of the prism, a new 
-                light source volume is generated for each wavelength of light. When a ray intersects a surface
-                in one or more of these volumes, the ray receives additional lighting of that wavelength.</p>
-
-            <p> The success of this method proved limited. The generated volumes were reasonably accurate in 
-                this test case, but were inaccurate in scenarios where they intersected more than a single side of
-                the prism. Additionally, these volumes did not interact favorably with KD trees, unlike photon 
-                mapped solutions. Another problem is that the time required to render a scene scales directly with
-                the number of wavelengths approximated. Despite these limitations, this project was academically
-                interesting and dramatically expanded my understanding of raytracing </p>
+            <div class="container img-wrapper col-md-6">
+                <img src="../assets/imgs/Articles/ARStageplayDust.PNG" alt="">
+            </div>  
+            <p> Each effect had to occur for all viewers at the exact same time. We set up a web server to send each 
+                device a timestamp to start at. Based on our tests, server messages sent to the Magic Leap took a few 
+                seconds to process, so this timestamp ensured every device would start at the same time.
+                This project was scheduled to take a full year, but I was only available for a single semester, 
+                so I had to ensure that these systems were modular and well-documented. The following team of developers
+                were able to expand upon these systems to complete the entire performance.
+            </p>
         </div>
    </section>
 
@@ -85,7 +77,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="socials">
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
+                        <a class="social-item" href="https://github.com/GerritKrot"><i class="ti-github"></i></a>
                     </div>
                 </div>
             </div>
