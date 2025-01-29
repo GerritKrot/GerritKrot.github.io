@@ -51,38 +51,25 @@
         </div>
         <!-- CENTER THIS IMAGE-->
         <div class="container img-wrapper">
-            <img src="../assets/imgs/Articles/RaytracingPageTop.jpg" alt="">
+            <img src="../assets/imgs/Articles/StreamOverlaysTop.PNG" alt="">
         </div>
         <div class="container">
             <div class="row text-center text-md-left">
-                <div  class="col-md-9">
+                <div  class="col-md-7">
                     <p>For the past few years, I have been involved with a Charity Livestream on Twitchcalled “Dawn of a New Day” 
                         that raised over $8,000 for various charities, including Save the Children and the Stonewall 
                         Community Foundation. For each of the streams, I program an overlay UI that plays custom animations 
                         and holds all sorts of data from the stream. These usually interface with Stream Labels and Google App
                          Sheets API to access the most up-to-date data. The apps have been made in Godot and Unity.</p>
 
-                    <p> Instead of a basic RGB color value, each ray has a component for each wavelength of light.
-                        Each wavelength was associated with an RGB value according to the Mihai-Strajescu approximation. 
-                        When rays encounter a refractive surface each wavelength splits off and is traced separately. 
-                        This diffraction creates the rainbow effect on the spheres as observed in the image to the right.</p>
+                    <p> In addition to my work for this charity, I have also created an overlay for Pokemon draft streams 
+                        that displays the chosen Pokemon and their stats. This tool was developed in Unity with C#. 
+                        Much of the UI for these projects was generated using each tools respective markdown-like interface.</p>
                 </div>
-                <div class = "col-md-3">
-                    <img src="../assets/imgs/Articles/RaytracingSpheres.jpg" alt="" class = "img-thumbnail">
+                <div class = "col-md-5">
+                    <img src="../assets/imgs/Articles/PokemonUI.PNG" alt="" class = "img-thumbnail">
                 </div>
             </div>
-            <p> To generate a projected rainbow effect, a rectangular light source with uniform direction 
-                was placed in the scene. When this light hits the prism, it diffracts into several different 
-                colors, specified by a run-time parameter. Based on the refractive index of the prism, a new 
-                light source volume is generated for each wavelength of light. When a ray intersects a surface
-                in one or more of these volumes, the ray receives additional lighting of that wavelength.</p>
-
-            <p> The success of this method proved limited. The generated volumes were reasonably accurate in 
-                this test case, but were inaccurate in scenarios where they intersected more than a single side of
-                the prism. Additionally, these volumes did not interact favorably with KD trees, unlike photon 
-                mapped solutions. Another problem is that the time required to render a scene scales directly with
-                the number of wavelengths approximated. Despite these limitations, this project was academically
-                interesting and dramatically expanded my understanding of raytracing </p>
         </div>
    </section>
 
@@ -95,7 +82,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="socials">
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
+                        <a class="social-item" href="https://github.com/GerritKrot/PokemonDraft"><i class="ti-github"></i></a>
                     </div>
                 </div>
             </div>
