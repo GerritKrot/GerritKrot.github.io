@@ -11644,3 +11644,54 @@ pre {
 .section.bg-gray {
   background: white;
 }
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #111;
+  gap: 2px;
+  padding: 2px;
+}
+
+.flex-container > button {
+  flex: 1;
+  margin: 0px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color: #fff;
+  border: none;
+  background-color: #ff7a57;
+}
+
+.flex-container > button:hover {
+  background-color: #ff5224 !important;
+  outline: none;
+}
+ 
+.flex-container > button:focus {
+  background-color: #d63f18 !important;
+  outline: none;
+}
+
+.blogAd{
+  background: white;
+}
+
+.aIblog{
+  background: white;
+}
+
+.graphicsBlog{
+  background: white;
+}
+.secureBlog{
+  background: white;
+}
+
+.gameDevBlog{
+  background: white;
+}
+
+

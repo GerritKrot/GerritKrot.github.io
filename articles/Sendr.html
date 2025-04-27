@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gerrit Krot - Sendr">
+    <meta name="author" content="Gerrit Krot">
+    <title>Gerrit Krot</title>
+    <link rel="icon" href="../assets/icon.png">
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="../assets/css/steller.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AllArticles.html">Articles</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="col-sm-10">
+                <div class="socials" style="float: right;">
+                    
+                    <a class="social-item" href="https://github.com/GerritKrot"><i class="ti-github"></i></a>
+                    <a class="social-item" href="mailto:GerritNKrot@gmail.com"><i class="ti-email"></i></a>
+                    <a class="social-item" href="https://www.linkedin.com/in/gerrit-n-krot/"><i class="ti-linkedin"></i></a>
+                </div>
+            </div>
+        </div>          
+    </nav><section id = MainArticle class="section">
+        <div class="container text-center">
+            <h4 class="title">Sendr</h4>
+            <h6>A Distributed Instant Messaging Application featuring E2E Encryption</h6>
+            <h6 class="subtitle" style="margin-top: 12px">Skills: Distributed Systems, Full-Stack Development, Research</h6>
+            <h6 class="subtitle" style="margin-bottom: 12px">Languages: React JS, Typescript, Golang.</h6>
+        </div>
+        <!-- CENTER THIS IMAGE-->
+        <!-- div class="container img-wrapper">
+            <img src="../assets/imgs/Articles/MtM/MtmTopBar.png" alt="" -->
+        </div>
+        <div class="container">
+            <div class="row text-center text-md-left">
+                <div  class="col-md-7">
+                    <p>Sendr was the result of a research project designed to examine the tradeoffs between security and practicality when implementing distributed systems. 
+                        Sendr is a distributed messaging application that uses end-to-end RSA public key encryption to facilitate server-blind group chats. 
+                        Messages are encrypted with other users' public keys as they are sent, and then decrypted by each user using their unique private key that is not shared 
+                        with any server. This ensures that if one or more of the servers were compromised, the user's messages would remain private. When a user joins a chat,
+                        they automatically send their public key to all users in that chat. This prompts each user their public key back to that user, ensuring that users can 
+                        communicate freely.</p>
+                </div>
+                <div class = "col-md-5">
+                    <img src="../assets/imgs/Articles/Sendr.png" alt="" class = "img-thumbnail">
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Additionally, Sendr’s backend allowed for users to communicate with multiple servers at the same time. 
+                    This project used Redis to facilitate a pub/sub architecture to synchronize each instance. It also had the ability to support AWS Elastic Load Balancing. 
+                    In addition to being a good exercise in distributed development and secure coding, this project primarily served to examine the difficulties associated with
+                    maintaining confidentiality and privacy on distributed networks. You can check out a detailed analysis of the project <a href="Sendr_Distributed_and_Private_Instant_Messaging.pdf">Here.</a></p>
+        </div>
+        </div>
+   </section>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="socials">
+                        <a class="social-item" href="https://github.com/GerritKrot/"><i class="ti-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- End of page footer -->
+	
+	<!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- steller js -->
+    <script src="../assets/js/steller.js"></script>
+
+</body>
+</html>

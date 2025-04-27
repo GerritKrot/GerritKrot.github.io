@@ -277,6 +277,37 @@
         </div>
     </section>
     End of portfolio section -->
+    <script>
+        function hideAllPortfolioElements(){
+            const portfolio = document.getElementsByClassName("blogAd");
+            for(let i = 0; i < portfolio.length; i++) {
+                portfolio[i].style.display = "none";
+            }
+        }
+
+        function resetAllArticleButtons(){
+            // Check if I ever add another flexContainer
+            const flex = document.getElementById("portfolioSelector");
+            const articleButtons = flex.getElementsByTagName("button");
+            for(let i = 0; i < articleButtons.length; i++) {
+                articleButtons[i].style.color = "#fff";
+                articleButtons[i].style.background = "#ff7a57";
+            }
+        }
+
+        function showSpecificPortfolioElements(classId){
+            // Show proper portfolio elements
+            hideAllPortfolioElements();
+            const portfolio = document.getElementsByClassName(classId);
+            for(let i = 0; i < portfolio.length; i++) {
+                portfolio[i].style.display = "block";
+            }
+
+            resetAllArticleButtons();
+            event.target.style.color = "#111";
+            event.target.style.background = "#d63f18";
+        }
+    </script>
 
     <!-- Blog Section -->
     <section id="portfolio" class="section">
@@ -285,10 +316,17 @@
             <h6 class="section-title mb-3">Recent Projects</h6>
             <p>Writeups, progress reports, and postmortems from my most recent projects.
             </p>
-            <p class="pb-3"> <a  href="articles/AllArticles.html">View all projects</a></p>
-
+            <div id="portfolioSelector" class="flex-container bg-gray" style="margin-bottom: 25px">
+                <button onclick= "showSpecificPortfolioElements('blogAd');">All Articles</button>
+                <button onclick= "showSpecificPortfolioElements('graphicsBlog');">Computer Graphics</button>
+                <button onclick= "showSpecificPortfolioElements('aiBlog');">AI & ML</button>
+                <button onclick= "showSpecificPortfolioElements('secureBlog');">Secure Coding</button>
+                <button onclick= "showSpecificPortfolioElements('gameDevBlog');">Game Dev</button>
+            </div>
+            
+            <!--p class="pb-3"> <a  href="articles/AllArticles.html">View all projects</a></p-->
             <div class="row text-left">
-                <div class="col-md-4">
+                <div class="col-md-4 blogAd graphicsBlog aiBlog">
                     <div class="card border mb-4">
                         <img src="assets/imgs/Articles/LightingReplicationComparison.png" alt="" class="card-img-top w-100">
                         <div class="card-body">
@@ -301,7 +339,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 blogAd graphicsBlog">
                     <div class="card border mb-4">
                         <img src="assets/imgs/Articles/RaytracingMain.jpg" alt="" class="card-img-top w-100">
                         <div class="card-body">
@@ -314,7 +352,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 blogAd secureBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/Sendr.png" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Sendr</h5>
+                            <p>A Distributed Instant Messaging Application featuring E2E Encryption.</p>
+                            <a href="articles/Sendr.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 blogAd secureBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/SmallerC.PNG" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Smaller C</h5>
+                            <div class="post-details">
+                                <a href="https://github.com/andromeda-sawtelle/CSCI-642-Group-1"><i class="ti-github"></i> 2024-December</a>
+                            </div>
+                            <p>A Memory Safety Analysis of a single pass C Compiler.</p>
+                            <a href="articles/SmallerC.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 blogAd aiBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/Conve.PNG" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">ConvE</h5>
+                            <p>Applying Transfer Learning to a Convolutional Neural Network.</p>
+                            <a href="articles/ConvE.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 blogAd aiBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/Firefly.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Self-Optimizing Firefly Function</h5>
+                            <p>Replicating the Results of "A Framework for Self-Tuning Optimization Algorithm."</p>
+                            <a href="articles/Firefly.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 blogAd graphicsBlog">
                     <div class="card border mb-4">
                         <img src="assets/imgs/Articles/ARStageplayDragon.PNG" alt="" class="card-img-top w-100">
                         <div class="card-body">
@@ -324,8 +405,29 @@
                         </div>
                     </div>
                 </div>
-                
-            </div>
+                <div class="col-md-4 blogAd gameDevBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/MtM/IngameReactor.PNG" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Minutes To Meltdown</h5>
+                            <p>Created for the Brackeys 2025.1 Game Jam.</p>
+                            <a href="articles/MinutesToMeltdown.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 blogAd gameDevBlog">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/Articles/PokemonUI.PNG" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Charity Stream Overlays</h5>
+                            <div class="post-details">
+                                <a href="https://github.com/GerritKrot/CharityStreamManager"><i class="ti-github"></i> 2024-June</a>
+                            </div>
+                            <p>Stream overlays made for "Dawn of a New Day" Charity Streams.</p>
+                            <a href="articles/StreamOverlays.html">Read More..</a>
+                        </div>
+                    </div>
+                </div>
 
             <!--
             <div class="row text-left">
@@ -445,6 +547,8 @@
         </div>  
     </section>
     <!-- End of Contact Section -->
+
+
 
     <!-- Page Footer -->
     <footer class="page-footer">

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gerrit Krot - Sendr">
+    <meta name="author" content="Gerrit Krot">
+    <title>Gerrit Krot</title>
+    <link rel="icon" href="../assets/icon.png">
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="../assets/css/steller.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AllArticles.html">Articles</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="col-sm-10">
+                <div class="socials" style="float: right;">
+                    
+                    <a class="social-item" href="https://github.com/GerritKrot"><i class="ti-github"></i></a>
+                    <a class="social-item" href="mailto:GerritNKrot@gmail.com"><i class="ti-email"></i></a>
+                    <a class="social-item" href="https://www.linkedin.com/in/gerrit-n-krot/"><i class="ti-linkedin"></i></a>
+                </div>
+            </div>
+        </div>          
+    </nav><section id = MainArticle class="section">
+        <div class="container text-center">
+            <h4 class="title">ConvE</h4>
+            <h6>Applying Transfer Learning to a Convolutional Neural Network.</h6>
+            <h6 class="subtitle" style="margin-top: 12px">Skills: Deep Learning, Machine Learning, Research</h6>
+            <h6 class="subtitle" style="margin-bottom: 12px">Languages: Python</h6>
+        </div>
+        <!-- CENTER THIS IMAGE-->
+        <!-- div class="container img-wrapper">
+            <img src="../assets/imgs/Articles/MtM/MtmTopBar.png" alt="" -->
+        </div>
+        <div class="container">
+            <div class="text-left">
+                    <p>ConvE is a convolutional neural network that was used to predict missing links in 2D knowledge graphs. 
+                        Each link represents a relationship between a subject and an object, such as a subject, “Acorn” has the relationship “IsSeedOf” with another object, “OakTree.”  
+                        ConvE uses Convolution to create a data structure that compares all of the knowledge between two given subjects,
+                        and uses this to identify relationships that may potentially be missing. Constructing missing knowledge graphs links is difficult and complex,
+                        and training a neural network to perform this task can take many, many hours. In 2023, I wanted to see if transfer learning could be applied 
+                        to this task to speed up the training process.</p>
+            </div>
+            <div class="text-left">
+                <p>Transfer learning is a relatively simple concept. First, you train a model on one set of data until it is effective and reliable. 
+                    For subsequent models trained on different data, instead of initializing them with random weights, you use the weights of the trained model again.
+                    This often results in a significant reduction in training time because some model weights are generalizable to different datasets, 
+                    and some variables have optimal weights with small ranges. By using weights from a pre-trained model, a portion of the weights of the model are relatively
+                    close to where they should be. As such, the time needed to get all of the weights into good ranges is dramatically reduced. In this project, 
+                    my group was able to reduce the number of epochs needed to train ConvE by over 70% in all cases, 
+                    showing that transfer learning is applicable to knowledge graph link prediction. To view the rest of our findings, please check out the <a href="ConvNeuralNetworkTransfer.pdf">full report.</a></p>
+            </div>
+            <div class="text-left">
+                <p>Because we were able to show that transfer learning was applicable to knowledge graph link-prediction, 
+                    more research can be done to isolate the values that remain consistent, and cause the improved training speed. 
+                    This knowledge can then be leveraged to identify good initialization values for this task, and ideally learn why the values work well.</p>
+            </div>
+        </div>
+   </section>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="socials">
+                        <a class="social-item" href="https://github.com/GerritKrot/"><i class="ti-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- End of page footer -->
+	
+	<!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- steller js -->
+    <script src="../assets/js/steller.js"></script>
+
+</body>
+</html>

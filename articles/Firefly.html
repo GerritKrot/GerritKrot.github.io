@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gerrit Krot - Sendr">
+    <meta name="author" content="Gerrit Krot">
+    <title>Gerrit Krot</title>
+    <link rel="icon" href="../assets/icon.png">
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="../assets/css/steller.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AllArticles.html">Articles</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="col-sm-10">
+                <div class="socials" style="float: right;">
+                    
+                    <a class="social-item" href="https://github.com/GerritKrot"><i class="ti-github"></i></a>
+                    <a class="social-item" href="mailto:GerritNKrot@gmail.com"><i class="ti-email"></i></a>
+                    <a class="social-item" href="https://www.linkedin.com/in/gerrit-n-krot/"><i class="ti-linkedin"></i></a>
+                </div>
+            </div>
+        </div>          
+    </nav><section id = MainArticle class="section">
+        <div class="container text-center">
+            <h4 class="title">Self-Optimizing Firefly Function</h4>
+            <h6>Replicating the Results of "A Framework for Self-Tuning Optimization Algorithm"</h6>
+            <h6 class="subtitle" style="margin-top: 12px">Skills: Artificial Intelligence, Optimization Algorithms, Research</h6>
+            <h6 class="subtitle" style="margin-bottom: 12px">Languages: Python</h6>
+        </div>
+        <!-- CENTER THIS IMAGE-->
+        <!-- div class="container img-wrapper">
+            <img src="../assets/imgs/Articles/MtM/MtmTopBar.png" alt="" -->
+        </div>
+        <div class="container">
+            <div class="text-left">
+                    <p>This project aimed to replicate the results of Xin-She Yangs paper “A Framework for Self-Tuning Optimization Algorithm,” 
+                        which details the self-tuning firefly algorithm. The paper builds off of the regular firefly algorithm by using a second
+                        firefly algorithm to optimize the hyperparameters of the first one, thus improving the rate of convergence and accuracy of the function. 
+                        The goal of our study was to verify that this worked as the paper stated, and determine the efficacy of the algorithm at improving convergence
+                        times on a wide array of problems.</p>
+            </div>
+            <div class="text-left">
+                <p>We tested the self-tuning firefly algorithm on a number of well-known optimization algorithm functions, such as the Ackley Function, 
+                    Yang’s Forest Function, and Zakharov’s function. In every case, the algorithm was indeed able to find hyper parameters that reduced the number
+                    of iterations needed for each function to converge. In each case, using the best-found parameters to run the optimization algorithm on each function 
+                    resulted in more consistent convergence with several orders of magnitude fewer iterations, with each iteration being over a hundred times faster,
+                    when compared to the process using standard hyperparameters. In all, the function put forward by Xin-She Yang was able to dramatically improve performance. 
+                    To view the rest of our findings, please check out the <a href="CSCI_633_Final_Paper_Group_3.pdf">full report.</a></p>
+            </div>
+            <div class="text-left">
+                <p>Because we were able to show that transfer learning was applicable to knowledge graph link-prediction, 
+                    more research can be done to isolate the values that remain consistent, and cause the improved training speed. 
+                    This knowledge can then be leveraged to identify good initialization values for this task, and ideally learn why the values work well.</p>
+            </div>
+        </div>
+   </section>
+
+    <!-- Page Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="socials">
+                        <a class="social-item" href="https://github.com/GerritKrot/"><i class="ti-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- End of page footer -->
+	
+	<!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- steller js -->
+    <script src="../assets/js/steller.js"></script>
+
+</body>
+</html>
